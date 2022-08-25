@@ -31,9 +31,8 @@ jobs:
     - name: Docker build
       run: |
        echo "Start docker build"
-       #docker build . -t openlxp/elrr-external-services
-       docker build --build-arg JAR_FILE="./target/elrraggregator-0.0.1-SNAPSHOT.jar" --file Dockerfile -t openlxp/elrr-aggregator .       
+       docker build --build-arg JAR_FILE="./target/elrraggregator-0.0.1-SNAPSHOT.jar" --file Dockerfile -t openlxp/adl-elrr-aggregator .       
     - name: Push Image
       run: |
        echo "Push new image to the Dockerhub repository"
-       docker push openlxp/elrr-aggregator
+       docker push openlxp/adl-elrr-aggregator
